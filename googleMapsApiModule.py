@@ -16,7 +16,8 @@ except ValueError as e:
 
 
 @logger_config.logger
-def direction(origin, destination):
+def direction(search_location):
+    origin, destination = search_location
     result = gmaps.directions(origin, destination)
     logging.debug("Summary: " + result[0]["summary"])
     result_url = (
@@ -59,13 +60,13 @@ def geocoding(search_location):
 
 
 @logger_config.logger
-def mapsstatic(address):
+def mapsstatic(search_location):
     result_url = (
         BASE_URL["mapsstatic"]
         + "?"
         + urllib.parse.urlencode(
             {
-                "center": address.lower(),
+                "center": search_location,
                 "zoom": 13,
                 "size": "600x350",
                 "key": config.key,

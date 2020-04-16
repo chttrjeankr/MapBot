@@ -15,6 +15,7 @@ database = os.getenv("DATABASE")
 port = os.getenv("DB_PORT")
 key = os.getenv("GCLOUD_API_KEY")  # Will be provided by mentors
 tbot_token = os.getenv("TELEGRAM_BOT_TOKEN")
+wit_token = os.getenv("WIT_TOKEN")
 
 # your_path_to_stanford-corenlp-x.x.x.jar
 stanford_path_to_jar = os.getenv("STANFORD_PATH_TO_JAR")
